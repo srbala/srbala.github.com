@@ -1,4 +1,4 @@
-srbala.github.com
+srbala.github.com Pages
 =================
 
-www wiki pages
+This repository contains pages for to display on public subdomain http://srbala.github.com 
