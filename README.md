@@ -8,7 +8,7 @@ Requirements:
 
 Steps:
 - create a local clone of this repository (with `git clone https://github.com/srbala/srbala.github.io.git`)
-- go to project's folder (with `cd pf4j-site`) 
+- go to project's folder (with `cd srbala.github.io`) 
 - make some modifications (see below sections)
 - test on your computer the modifications (see below sections)
 - commit and push the modifications on github
