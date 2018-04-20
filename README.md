@@ -1,4 +1,4 @@
-[PF4J](http://pf4j.org) site repository.
+[Bala Raman](https://srbala.github.io) personal web site.
 
 How to build
 -------------------
@@ -77,8 +77,3 @@ Start the server
 -------------------
 Start the server with: `jekyll serve --watch`  
 Open local site with: `http://localhost:4000` 
-
-Contributing
--------------------
-
-Any contribution is welcome. Please fork the repository and submit a Pull Request.
