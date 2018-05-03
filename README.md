@@ -3,8 +3,8 @@
 How to build
 -------------------
 Requirements: 
-- [Git](http://git-scm.com/) 
-- [Jekyll](http://jekyllrb.com/)
+- [Git](https://git-scm.com/) 
+- [Jekyll](https://jekyllrb.com/)
 
 Steps:
 - create a local clone of this repository (with `git clone https://github.com/srbala/srbala.github.io.git`)
