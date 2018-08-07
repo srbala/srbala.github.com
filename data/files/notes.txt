@@ -1,1 +1,6 @@
-notes
+## notes
+
+https://www.buggybread.com/2015/02/java-j2ee-technical-architect-interview.html
+https://www.journaldev.com/2696/spring-interview-questions-and-answers
+https://www.buggybread.com/2015/03/spring-framework-list-of-aware.html
+https://www.baeldung.com/spring-interview-questions
