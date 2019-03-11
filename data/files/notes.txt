@@ -4,3 +4,79 @@ https://www.buggybread.com/2015/02/java-j2ee-technical-architect-interview.html
 https://www.journaldev.com/2696/spring-interview-questions-and-answers
 https://www.buggybread.com/2015/03/spring-framework-list-of-aware.html
 https://www.baeldung.com/spring-interview-questions
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <!-->
+    <parent>
+        <groupId>ch.vorburger.mariaDB4j</groupId>
+        <artifactId>mariaDB4j-pom-lite</artifactId>
+        <version>2.2.1</version>
+        <relativePath>../mariaDB4j-pom-lite/pom.xml</relativePath>
+    </parent>
+    -->
+    <parent>
+        <groupId>ch.vorburger.mariaDB4j</groupId>
+        <artifactId>mariaDB4j-binaries</artifactId>
+        <version>0.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <groupId>ch.vorburger.mariaDB4j</groupId>
+	<artifactId>mariaDB4j-db-win32</artifactId>
+	<version>${mariaDB.version}</version>
+
+    <properties>
+        <mariaDB.version>10.3.11</mariaDB.version>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${project.build.directory}/generated-resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>com.googlecode.maven-download-plugin</groupId>
+                <artifactId>download-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>getfile</id>
+                        <phase>pre-generate-resources</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>https://downloads.mariadb.com/MariaDB/mariadb-${mariaDB.version}/win32-packages/mariadb-${mariaDB.version}-win32.zip</url>
+                            <unpack>true</unpack>
+                            <outputDirectory>${cacheDir.input}/output/mariadb-${mariaDB.version}-win32</outputDirectory>
+                            <md5>6366f91c766aa25f4e62f50175caf8be</md5>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-resources</id>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <target>
+                                <unzip src="${cacheDir.input}/input/win32.zip"
+                                       dest="${project.build.directory}/generated-resources/ch/vorburger/mariadb4j/mariadb-${mariaDB.version}/win32"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>
